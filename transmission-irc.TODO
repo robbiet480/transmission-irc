@@ -1,0 +1,40 @@
+irc havonta (42nap) latogatni a szervert, hogy ne toroljek az accountot
+process start/respawn/kill  [:irc.example.com 433 * TransBot :Nickname is already in use.]
+
+
+
+PRIVMSG MemoServ :LIST
+:MemoServ!services@irc.example.com NOTICE JohnDoe :You have no memos.
+
+:MemoServ!services@irc.example.com NOTICE JohnDoe :You have a new memo from JohnDoe.
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Type /msg MemoServ READ 1 to read it.
+
+PRIVMSG MemoServ :READ 1
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 1 from JohnDoe (Mar 27 23:06:57 2010 UTC).  To delete, type: /msg MemoServ DEL 1
+:MemoServ!services@irc.example.com NOTICE JohnDoe :test
+
+PRIVMSG MemoServ :DEL 1
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 1 has been deleted.
+
+PRIVMSG MemoServ :LIST
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memos for JohnDoe.  To read, type: /msg MemoServ READ num
+:MemoServ!services@irc.example.com NOTICE JohnDoe :  Num  Sender            Date/Time
+:MemoServ!services@irc.example.com NOTICE JohnDoe :*   1  JohnDoe           Mar 27 23:09:41 2010 UTC
+:MemoServ!services@irc.example.com NOTICE JohnDoe :*   2  JohnDoe           Mar 27 23:09:49 2010 UTC
+
+PRIVMSG MemoServ :READ 1,2
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 1 from JohnDoe (Mar 27 23:09:41 2010 UTC).  To delete, type: /msg MemoServ DEL 1
+:MemoServ!services@irc.example.com NOTICE JohnDoe :test
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 2 from JohnDoe (Mar 27 23:09:49 2010 UTC).  To delete, type: /msg MemoServ DEL 2
+:MemoServ!services@irc.example.com NOTICE JohnDoe :test2
+
+PRIVMSG MemoServ :READ NEW
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 3 from JohnDoe (Mar 27 23:13:01 2010 UTC).  To delete, type: /msg MemoServ DEL 3
+:MemoServ!services@irc.example.com NOTICE JohnDoe :test3
+:MemoServ!services@irc.example.com NOTICE JohnDoe :Memo 4 from JohnDoe (Mar 27 23:13:10 2010 UTC).  To delete, type: /msg MemoServ DEL 4
+:MemoServ!services@irc.example.com NOTICE JohnDoe :test4
+
+PRIVMSG MemoServ :LIST NEW
+:MemoServ!services@irc.example.com NOTICE JohnDoe :New memos for JohnDoe.  To read, type: /msg MemoServ READ num
+:MemoServ!services@irc.example.com NOTICE JohnDoe :  Num  Sender            Date/Time
+:MemoServ!services@irc.example.com NOTICE JohnDoe :*   1  JohnDoe           Mar 27 23:16:05 2010 UTC
