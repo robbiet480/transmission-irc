@@ -1,0 +1,16 @@
+
+NOTE: currently needs NickServ to work
+
+1) edit "transmission.conf" file
+
+2) run "php transmission-irc.php" from the console (which is NOT a browser!)
+
+3) connect to the (same) irc server, send private message to your bot
+   example: "/msg TransBot --help"
+   command syntax is the same as transmission-remote
+   (command lines are simply passed over because transmission developers change the syntax too frequently)
+
+
+1b) instead of the official transmission-remote you can use my wrapper named transmission-remote.php
+    to see the added features run "php transmission-remote.php --help"
+    to use it with the irc script replace exec parameter in the .conf file to "php transmission-remote.php"
